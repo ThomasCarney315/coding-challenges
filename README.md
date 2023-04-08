@@ -1,6 +1,6 @@
 # Coding Challenges
 
-* Every day, I complete at least one coding challenge and push it/them completed to this repository.
+* Every day, I complete at least one coding challenge and push it/them to this repository.
 * This repo is organized into directories by language, platform, and difficulty level, in that order.
 
 ## Languages   
