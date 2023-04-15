@@ -10,5 +10,5 @@
 ## Platforms
 <li><a target="_blank" href="https://www.codewars.com/users/thomascarney315"><span> Codewars</span></a></li>
 <li><a target="_blank" href="https://leetcode.com/thomascarney315/"><span> LeetCode</span></a></li>
-<li><a target="_blank" href="https://www.hackerrank.com/thomascarney315"><span>HackeRank</span></a></li>
+<li><a target="_blank" href="https://www.hackerrank.com/thomascarney315"><span>HackerRank</span></a></li>
 <!-- <li><a target="_blank" href="#"><span>CodeForces</span></a></li> -->
