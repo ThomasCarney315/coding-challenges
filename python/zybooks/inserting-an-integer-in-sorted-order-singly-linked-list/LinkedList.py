@@ -32,7 +32,24 @@ class LinkedList:
             
     # TODO: Write insert_in_ascending_order() method
     def insert_in_ascending_order(self, new_node):
-            
+        if self.head == None:
+            self.append(new_node)
+        elif self.head.data > new_node.data:
+            self.prepend(new_node)
+        elif self.head.next:
+            curr = self.head
+            while curr.next.data < new_node.data:
+                if curr.next.next:
+                    curr = curr.next
+                else:
+                    break
+            if curr.next.data < new_node.data:
+                curr = curr.next
+                self.insert_after(curr, new_node)
+            elif curr.next.data > new_node.data:
+                self.insert_after(curr, new_node)
+        else:
+            self.append(new_node)
     def remove_after(self, current_node):
         # Special case, remove head
         if (current_node == None) and (self.head != None):
