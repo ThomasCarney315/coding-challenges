@@ -4,6 +4,13 @@ class LinkedList:
         self.tail = None
 
     # TODO: Write append() method
+    def append(self, new_node):
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
 
     def prepend(self, new_node):
         if self.head == None:
@@ -39,7 +46,24 @@ class LinkedList:
 
     # TODO: Write search() method that locates node with the same data value 
     #       (data) as the key and sets the found node's position (node_pos)
-        
+    def search(self, val):
+        if self.head == None:
+            return None
+        else:
+            pos = 1
+            curr = self.head
+            curr.node_pos = pos
+            while curr.data != val:
+                if curr.next:
+                    curr = curr.next
+                    pos += 1
+                    curr.node_pos = pos
+                else:
+                    break
+            if curr.data == val:
+                return curr
+            else:
+                return None
     def print_list(self):
         cur_node = self.head
         while cur_node != None:
