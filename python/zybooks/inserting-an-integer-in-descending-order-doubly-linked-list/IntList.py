@@ -61,6 +61,21 @@ class IntList:
             
     def insert_in_descending_order(self, new_node):
         # TODO: Write insert_in_descending_order method
-                
+        if self.head is None:
+            self.append(new_node)
+        else:
+            current = self.head
+            if current.data < new_node.data:
+                self.prepend(new_node)
+            else:
+                while current.data and current.data > new_node.data:
+                    current = current.next
+                    if current is None:
+                        break
+                if current is None:
+                    self.append(new_node)
+                else:
+                    prev = current.prev
+                    self.insert_after(prev, new_node)
             
             
