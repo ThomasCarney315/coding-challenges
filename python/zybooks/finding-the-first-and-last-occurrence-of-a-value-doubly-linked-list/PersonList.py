@@ -62,8 +62,28 @@ class PersonList:
         # TODO: Write findFirst() method          
         # Find the node with the first occurrence of the age                                      
         # Start with the headNode and traverse forward
-        
+        current = self.head
+        if current.age == age:
+            return current
+        while current.age != age:
+            current = current.next
+            if current is None:
+                break
+            if current.age == age:
+                return current
+        return None
+
     def find_last(self, age):
         # TODO: Write findLast() method     
         # Find the node with the last occurrence of the age                                       
         # Start with the tailNode and traverse backward
+        current = self.tail
+        if current.age == age:
+            return current
+        while current.age != age:
+            current = current.prev
+            if current is None:
+                break
+            if current.age == age:
+                return current
+        return None
