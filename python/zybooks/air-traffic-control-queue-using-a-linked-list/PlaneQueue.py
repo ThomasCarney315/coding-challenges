@@ -8,7 +8,15 @@ class PlaneQueue:
     # TODO: Write push() and pop() methods. push() adds an item to the queue
     #       and adds 1 to length. pop() removes and returns the first item in 
     #       the queue and subtracts 1 from length.
-
+    def push(self, flight):
+        self.plane_list.append(flight)
+        self.length += 1
+    
+    def pop(self):
+        curr = self.plane_list.head.flight_code
+        self.plane_list.remove_after(None)
+        self.length -= 1
+        return curr
 
     def is_empty(self):
         return self.length == 0
