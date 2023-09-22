@@ -13,22 +13,21 @@ def word_frequency_counter(file_path, rm_common = False):
     # Your code here
     word_counts = {}
     with open(file_path) as file:
-        #handle one line at a time to minimize memory usage for very large files
-        for line in file:
-            words = line.lower()
-            words = words.replace('\n', ' ')
-            words = re.sub(r'[^a-z ]', '', words)
-            if rm_common: 
-                words = remove_common_stop_words(words)
-            words = words.split(' ')
-            #remove '' elements
-            words = list(filter(lambda x: x, words))
-            #update dictionary with word counts
-            for word in words:
-                if word in word_counts:
-                    word_counts[word] += 1
-                else:
-                    word_counts[word] = 1
+        words = file.read()
+        words = words.lower()
+        words = words.replace('\n', ' ')
+        words = re.sub(r'[^a-z ]', '', words)
+        if rm_common: 
+            words = remove_common_stop_words(words)
+        words = words.split(' ')
+        #remove '' elements
+        words = list(filter(lambda x: x, words))
+        #update dictionary with word counts
+        for word in words:
+            if word in word_counts:
+                word_counts[word] += 1
+            else:
+                word_counts[word] = 1
     if rm_common:
         print('With common stop words ( "the", "and", "in") excluded:')
     return word_counts
@@ -54,7 +53,7 @@ def print_top_n_words(word_freq_dict, n):
 def remove_common_stop_words(str):
     return re.sub(r'\bthe\b|\band\b|\bin\b', '', str)
 
-print('1 line of text at a time')
+print('whole text at once')
 tracemalloc.start()
 
 # Example Usage
