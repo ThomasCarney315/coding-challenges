@@ -28,6 +28,7 @@
 // -109 <= target <= 109
 // Only one valid answer exists.
 
+
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -47,4 +48,26 @@ var twoSum = function(nums, target) {
         }
     } )
     return indices;
+};
+
+var twoSum = function(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+       for (let j = 0; j < nums.length; j++) {
+           if (!(i === j)) {
+               if (nums[i] + nums[j] === target) {
+                   return [i, j]
+               }
+           } 
+       }
+    }
+};
+
+var twoSum = function(nums, target) {
+    const hashMap = {};
+    for (let i = 0; i < nums.length; i++) {
+        if (target - nums[i] in hashMap) {
+            return [i, hashMap[target - nums[i]]];
+        }
+        hashMap[nums[i]] = i;
+    }
 };
