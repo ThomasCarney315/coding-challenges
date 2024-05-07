@@ -6,6 +6,7 @@
 ## Languages   
 * JavaScript
 * Python
+* Java
 
 ## Platforms
 <li><a target="_blank" href="https://www.codewars.com/users/thomascarney315"><span> Codewars</span></a></li>
